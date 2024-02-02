@@ -25,7 +25,7 @@
                     <h3 class="resume-title">Education</h3>
                     <div class="resume-item">
                         <h4>Information Technology</h4>
-                        <h5>2018 - Present</h5>
+                        <h5>2018 - 2022</h5>
                         <p><em>Dalubhasaan ng Lungsod ng Lucena</em></p>
                         <p> I'm currently studying at this school. They helps us to be a better computer IT and programmer.
                         </p>
@@ -48,6 +48,8 @@
                         <p><em>Lucena City, Quezon Philippines</em></p>
                         <ul>
                             <li>Implemented the Business Permit Licensing System</li>
+                            <li>Interconnected and maintained the BPLS server across various departments in Lucena City.
+                            </li>
                         </ul>
                         <ul>
                             <li>Contributed to the implementation of a Human Resource Information System</li>
