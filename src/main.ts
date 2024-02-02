@@ -13,7 +13,6 @@ import FooterVue from './components/Footer.vue'
 import PortfolioVue from './components/Portfolio.vue'
 import './assets/vendor/purecounter/purecounter.js';
 import 'bootstrap'
-import 'glightbox';
 import 'isotope-layout';
 import './assets/vendor/swiper/swiper-bundle.min.js';
 import './assets/vendor/waypoints/noframework.waypoints.js';
