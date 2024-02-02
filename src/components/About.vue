@@ -64,7 +64,7 @@ export default {
                         <div class="col-lg-6">
                             <ul>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{ age }}</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>None</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Science in Information Technology</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
                                     <span>kevinmarc.beetle@gmail.com</span>
                                 </li>
