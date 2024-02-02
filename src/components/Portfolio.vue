@@ -24,25 +24,25 @@
                 </div>
 
                 <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"
-                    style="position: relative; height: 1267.11px;">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app"
-                        style="position: absolute; left: 0px; top: 0px;">
-                        <div class="portfolio-wrap">
-                            <img src="../assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="../assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                    <a href="#" class="portfolio-details-lightbox" data-glightbox="type: external"
-                                        title="Portfolio Details"><i class="bx bx-link"></i></a>
+                    style="position: relative;height: 4330.62px;">
+                    <div v-for="(portfolio,index) in portfolios">
+                        <div class="col-lg-4 col-md-6 portfolio-item" :class="portfolio.type"
+                            style="position: absolute; left: 0px;" :style="{ top: (index * 500) + 'px' }">
+                            <div class="portfolio-wrap">
+                                <img :src="portfolio.image" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>{{ portfolio.title }}</h4>
+                                    <p>{{ portfolio.type }}</p>
+                                    <div class="portfolio-links">
+                                        <a :href="portfolio.link" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                                            title="App 1"><i class="bx bx-plus"></i></a>
+                                        <a href="#" class="portfolio-details-lightbox" data-glightbox="type: external"
+                                            title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
             </div>
@@ -51,29 +51,46 @@
 </template>
 
 <script lang= "ts">
+let height = 500;
 export default {
+
     data() {
         return {
             portfolios: [
                 {
                     id: 1,
                     title: "Project 1",
-                    description: "This is the description for Project 1.",
+                    link: "#",
+                    type: "filter-app",
+                    image: "src/assets/img/portfolio/portfolio-1.jpg",
                 },
                 {
                     id: 2,
                     title: "Project 2",
-                    description: "This is the description for Project 2.",
-                },
-                {
+                    link: "#",
+                    type: "filter-web",
+                    image: "src/assets/img/portfolio/portfolio-2.jpg",
+                }, {
                     id: 3,
                     title: "Project 3",
-                    description: "This is the description for Project 3.",
+                    link: "#",
+                    type: "filter-app",
+                    image: "src/assets/img/portfolio/portfolio-1.jpg",
+                }, {
+                    id: 4,
+                    title: "Project 4",
+                    link: "#",
+                    type: "filter-app",
+                    image: "src/assets/img/portfolio/portfolio-1.jpg",
                 },
             ],
+            height
+
         };
     },
 };
 </script>
 
-<style>/* Add your custom styles here */</style>
+<style>
+/* Add your custom styles here */
+</style>
