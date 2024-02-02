@@ -12,15 +12,17 @@
 
 <script lang="ts">
 
+import AOS from 'aos';
 
 
 export default {
-  setup() {
 
+  mounted() {
 
+    AOS.init();
   }
 }
-</script>
+</script >
 
 <style scoped>
 .slide-enter-active,
