@@ -12,13 +12,14 @@
                     <h3 class="resume-title">Sumary</h3>
                     <div class="resume-item pb-0">
                         <h4>Marc Kevin Salagubang</h4>
-                        <p><em>Dependable and goal oriented IT specialist with 1 year(s) of experience in Web Developing.
-                                Created a functional website and Software with the help of google and stack overflow</em>
+                        <p><em> I have gained valuable experience as a software developer, specializing in TypeScript for
+                                backend development. I am known for my innovative approach to problem-solving, constantly
+                                seeking new ways to improve and enhance projects.</em>
                         </p>
                         <ul>
                             <li>Lucena City, Quezon Philippines</li>
                             <li>(639)354-782-937</li>
-                            <li>pagebook.kev@gmail.com</li>
+                            <li>kevinmarc.beetle@gmail.com</li>
                         </ul>
                     </div>
 
@@ -48,6 +49,9 @@
                         <p><em>Lucena City, Quezon Philippines</em></p>
                         <ul>
                             <li>Implemented the Business Permit Licensing System</li>
+
+                        </ul>
+                        <ul>
                             <li>Interconnected and maintained the BPLS server across various departments in Lucena City.
                             </li>
                         </ul>
@@ -72,3 +76,17 @@
     </section>
     <!-- End Resume Section -->
 </template>
+<style scoped>
+.resume .resume-item ul li {
+    text-align: left;
+    list-style-type: none;
+    position: relative;
+}
+
+.resume .resume-item ul li::before {
+    content: '➤';
+    /* You can use any character or Unicode for the arrow */
+    position: absolute;
+    left: -1.5em;
+    /* Adjust this value to move the arrow left or right */
+}</style>
