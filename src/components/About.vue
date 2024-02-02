@@ -53,7 +53,7 @@ export default {
                                 <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>March 19,
                                         2000</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                    <span>www.example.com</span>
+                                    <span>marckevinsalagubang.vercel.app</span>
                                 </li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+6393 5478 2937</span>
                                 </li>
