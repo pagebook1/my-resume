@@ -14,7 +14,7 @@ import PortfolioVue from './components/Portfolio.vue'
 import './assets/vendor/purecounter/purecounter.js';
 import 'bootstrap'
 import '../node_modules/glightbox/dist/js/glightbox.min.js';
-import './assets/vendor/isotope-layout/isotope.pkgd.min.js';
+import '../node_modules/isotope-layout/dist/isotope.pkgd.min.js';
 import './assets/vendor/swiper/swiper-bundle.min.js';
 import './assets/vendor/waypoints/noframework.waypoints.js';
 // Import main.js
