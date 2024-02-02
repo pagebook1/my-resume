@@ -13,10 +13,9 @@ import FooterVue from './components/Footer.vue'
 import PortfolioVue from './components/Portfolio.vue'
 import './assets/vendor/purecounter/purecounter.js';
 import 'bootstrap'
-import Swiper from 'swiper';
 import 'isotope-layout';
 // Import main.js
-// import './assets/js/main.js';
+import './assets/js/main.js';
 
 
 const routes = [

@@ -16,6 +16,7 @@ import AOS from 'aos';
 import '../node_modules/glightbox/dist/js/glightbox.min.js';
 
 
+
 export default {
 
   mounted() {
