@@ -24,10 +24,9 @@
                 </div>
 
                 <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"
-                    style="position: relative;" :style="{height: `${portfolios.length * 500}px`}">
-                    <div v-for="(portfolio,index) in portfolios">
-                        <div class="col-lg-4 col-md-6 portfolio-item" :class="portfolio.type"
-                            style="position: absolute; left: 0px;" :style="{ top: (index * 500) + 'px' }">
+                    style="position: relative;" :style="{ height: `700px` }">
+                    <div v-for="(portfolio) in portfolios">
+                        <div class="col-lg-4 col-md-6 portfolio-item" :class="portfolio.type" style="position: absolute;">
                             <div class="portfolio-wrap">
                                 <img :src="portfolio.image" class="img-fluid" alt="">
                                 <div class="portfolio-info">
@@ -70,18 +69,34 @@ export default {
                     link: "/assets/img/bpls/dashboard.png",
                     type: "filter-windows",
                     image: "/assets/img/bpls/dashboard.png",
+                },
+
+                {
+                    id: 1,
+                    title: "Project 1",
+                    link: "/assets/img/bpls/dashboard.png",
+                    type: "filter-windows",
+                    image: "/assets/img/bpls/login.png",
+                },
+                {
+                    id: 2,
+                    title: "Project 2",
+                    link: "/assets/img/bpls/dashboard.png",
+                    type: "filter-windows",
+                    image: "/assets/img/bpls/dashboard.png",
                 }, {
-                    id: 3,
-                    title: "Project 3",
-                    link: "#",
-                    type: "filter-app",
-                    image: "/assets/img/portfolio/portfolio-1.jpg",
-                }, {
-                    id: 4,
-                    title: "Project 4",
-                    link: "#",
-                    type: "filter-app",
-                    image: "/assets/img/portfolio/portfolio-1.jpg",
+                    id: 1,
+                    title: "Project 1",
+                    link: "/assets/img/bpls/dashboard.png",
+                    type: "filter-windows",
+                    image: "/assets/img/bpls/login.png",
+                },
+                {
+                    id: 2,
+                    title: "Project 2",
+                    link: "/assets/img/bpls/dashboard.png",
+                    type: "filter-windows",
+                    image: "/assets/img/bpls/dashboard.png",
                 },
             ],
             height

@@ -13,7 +13,6 @@
 
 <script lang="ts">
 
-import '../node_modules/glightbox/dist/js/glightbox.min.js';
 import FloatingMode from './components/FloatingMode.vue';
 
 
