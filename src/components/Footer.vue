@@ -1,6 +1,11 @@
+<script setup lang="ts">
+import { inject } from 'vue';
+const isDarkMode = inject('isDarkMode');
+
+</script>
 <template>
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="full-width">
+    <footer id="footer" class="full-width" :class="{ 'dark-mode': isDarkMode }">
         <div class="container">
             <h3>Marc Kevin Salagubang</h3>
             <p>A Computer IT Specialist at your Service!</p>
@@ -26,5 +31,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.dark-mode {
+    background-color: #343a40;
+    color: #f8f9fa;
 }
 </style>

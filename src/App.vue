@@ -1,4 +1,5 @@
 <template>
+  <floating-mode />
   <router-view name="header" />
   <transition-group name="slide" mode="out-in">
     <router-view name="default" />
@@ -12,16 +13,14 @@
 
 <script lang="ts">
 
-import AOS from 'aos';
 import '../node_modules/glightbox/dist/js/glightbox.min.js';
-
+import FloatingMode from './components/FloatingMode.vue';
 
 
 export default {
-
   mounted() {
-    AOS.init();
-  }
+  },
+  components: { FloatingMode }
 }
 </script >
 

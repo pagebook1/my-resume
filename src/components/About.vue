@@ -39,14 +39,14 @@ export default {
             </div>
 
             <div class="row">
-                <div class="col-lg-4">
-                    <img src="../assets/img/profile-img.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-8 pt-4 pt-lg-0 content">
-                    <h3>Software &amp; Web Developer.</h3>
-                    <p class="fst-italic">
-                        I love backend coding because it's an exciting field.
-                    </p>
+                <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column  align-items-center">
+                    <div class=" d-flex flex-column justify-content-center align-items-center mb-5">
+                        <h3>Software &amp; Web Developer.</h3>
+                        <p class="fst-italic">
+                            I love backend coding because it's an exciting field.
+                        </p>
+                    </div>
+
                     <div class="row">
                         <div class="col-lg-6">
                             <ul>
@@ -64,7 +64,7 @@ export default {
                         <div class="col-lg-6">
                             <ul>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{ age }}</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Science in Information Technology</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BSIT</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
                                     <span>kevinmarc.beetle@gmail.com</span>
                                 </li>

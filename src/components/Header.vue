@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { inject } from 'vue';
+
+const isDarkMode = inject('isDarkMode');
 </script>
 <template>
-    <header id="header" class="d-flex flex-column justify-content-center">
+    <header id="header" class="d-flex flex-column justify-content-center" :class="{ 'dark-mode': isDarkMode }">
 
         <nav id="navbar" class="navbar nav-menu">
             <ul>
@@ -12,7 +15,7 @@
                 <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a>
                 </li>
                 <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-                        <span>Portfolio</span></a></li> 
+                        <span>Portfolio</span></a></li>
                 <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
                 </li>
             </ul>
@@ -20,4 +23,5 @@
 
     </header><!-- End Header -->
 </template>
-<style></style>
+<style scoped>
+</style>
