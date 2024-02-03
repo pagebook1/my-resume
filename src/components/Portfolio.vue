@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"
-                    style="position: relative;height: 4330.62px;">
+                    style="position: relative;" :style="{height: `${portfolios.length * 500}px`}">
                     <div v-for="(portfolio,index) in portfolios">
                         <div class="col-lg-4 col-md-6 portfolio-item" :class="portfolio.type"
                             style="position: absolute; left: 0px;" :style="{ top: (index * 500) + 'px' }">
@@ -60,16 +60,16 @@ export default {
                 {
                     id: 1,
                     title: "Project 1",
-                    link: "#",
-                    type: "filter-app",
-                    image: "/assets/img/portfolio/portfolio-1.jpg",
+                    link: "/assets/img/bpls/dashboard.png",
+                    type: "filter-windows",
+                    image: "/assets/img/bpls/login.png",
                 },
                 {
                     id: 2,
                     title: "Project 2",
-                    link: "#",
-                    type: "filter-web",
-                    image: "/assets/img/portfolio/portfolio-2.jpg",
+                    link: "/assets/img/bpls/dashboard.png",
+                    type: "filter-windows",
+                    image: "/assets/img/bpls/dashboard.png",
                 }, {
                     id: 3,
                     title: "Project 3",
