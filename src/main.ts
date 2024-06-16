@@ -11,11 +11,12 @@ import HeaderVue from './components/Header.vue'
 import ContactVue from './components/Contact.vue'
 import FooterVue from './components/Footer.vue'
 import PortfolioVue from './components/Portfolio.vue'
-import './assets/vendor/purecounter/purecounter.js';
+import '@srexi/purecounterjs';
 import 'bootstrap'
 import 'isotope-layout';
 // Import main.js
 import './assets/js/main.js';
+import { FirebaseConfig } from './firebase/init.js'
 
 
 const routes = [
@@ -27,6 +28,8 @@ const router = createRouter({
 })
 
 
+const firebase = new FirebaseConfig();
+firebase.initializeFirebase;
 
 createApp(App).use(router).mount('#app')
 
