@@ -1,8 +1,8 @@
 <template>
     <!-- create a div for floating button -->
-     <div class="floating-modal" v-show = "!isModalVisible">
+    <div class="floating-modal" v-show="!isModalVisible">
         <button @click="isModalVisible = true">Chat With Me</button>
-     </div>
+    </div>
     <div class="chatbot-modal" v-show="isModalVisible">
         <div class="chatbot-modal-header">
             <h3>Chat with me </h3>
@@ -30,14 +30,14 @@
 
 <script lang="ts">
 import { GeminiAI } from '../gemini-ai/gemini-prompt'
-import {TTS} from  '../gemini-ai/TexttoSpeech'
+import { TTS } from '../gemini-ai/TexttoSpeech'
 //add 1 message to the messages array
 export default {
     data() {
         return {
             messages: [] as { id: number, text: string, isBot: boolean }[],
             userInput: '',
-            isModalVisible : true
+            isModalVisible: true
         };
     },
     methods: {
@@ -47,7 +47,7 @@ export default {
                 this.userInput = ''
                 this.messages.push({ id: Date.now(), text: user_input, isBot: false });
                 const bot_response = await new GeminiAI({ prompt: user_input }).run();
-                await new TTS({message:bot_response}).speak();
+                await new TTS({ message: bot_response }).speak();
                 this.messages.push({ id: Date.now(), text: bot_response, isBot: true });
                 // Call your chatbot API or add your bot logic here to get the bot's response
                 // and push it to the messages array with isBot set to true
@@ -56,8 +56,10 @@ export default {
     },
     async mounted() {
         await new GeminiAI({ prompt: 'Give a welcoming message about you. Make it cheerful and Sarcastic such as Hello, I am kevin. Not physically but still I am kevin created using Gemini. I have all knowledge about him (like that make it short and cheerful)' }).run().then((response) => {
-             this.messages.push({ id: Date.now(), text: response, isBot: true });
-             new TTS({message:response}).speak();
+            this.messages.push({ id: Date.now(), text: response, isBot: true });
+            setTimeout(() => {
+                new TTS({ message: response }).speak();
+            }, 1000); // Delay of 1 second
         });
 
 
@@ -73,12 +75,14 @@ export default {
     z-index: 1000;
     padding: 10px;
 }
+
 .chatbot-modal-header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
+
 @media (min-width: 768px) {
     .chatbot-modal {
         width: 70%;
@@ -90,6 +94,7 @@ export default {
         width: 50%;
     }
 }
+
 .chatbot-modal {
     position: fixed;
     bottom: 0;
