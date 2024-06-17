@@ -1,4 +1,4 @@
-import { UseSpeechSynthesisOptions, useSpeechSynthesis } from '@vueuse/core'
+import { useSpeechSynthesis } from '@vueuse/core'
 export class TTS {
     message: string;
     constructor({ message }: { message: string }) {
