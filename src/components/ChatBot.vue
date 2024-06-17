@@ -56,8 +56,8 @@ export default {
     },
     async mounted() {
         await new GeminiAI({ prompt: 'Give a welcoming message about you. Make it cheerful and Sarcastic such as Hello, I am kevin. Not physically but still I am kevin created using Gemini. I have all knowledge about him (like that make it short and cheerful)' }).run().then((response) => {
-             new TTS({message:response}).speak();
              this.messages.push({ id: Date.now(), text: response, isBot: true });
+             new TTS({message:response}).speak();
         });
 
 
