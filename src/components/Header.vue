@@ -18,6 +18,7 @@ const isDarkMode = inject('isDarkMode');
                         <span>Portfolio</span></a></li>
                 <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
                 </li>
+                <li><a href="#chat" class="nav-link scrollto"><i class="bx bx-book"></i> <span>Chat Me (AI KEVIN)</span></a></li>
             </ul>
         </nav><!-- .nav-menu -->
 

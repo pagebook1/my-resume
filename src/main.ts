@@ -17,10 +17,11 @@ import 'isotope-layout';
 // Import main.js
 import './assets/js/main.js';
 import { FirebaseConfig } from './firebase/init.js'
+import ChatBot from './components/ChatBot.vue'
 
 
 const routes = [
-    { path: '/', components: { default: Hero, header: HeaderVue, about: AboutVue, portfolio: PortfolioVue, resume: ResumeVue, contact: ContactVue, footer: FooterVue } },
+    { path: '/', components: { default: Hero, header: HeaderVue, about: AboutVue, portfolio: PortfolioVue, resume: ResumeVue, contact: ContactVue, footer: FooterVue, chat: ChatBot } },
 ]
 const router = createRouter({
     history: createWebHistory(),

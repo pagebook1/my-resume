@@ -7,6 +7,7 @@
     <router-view name="resume" />
     <router-view name="portfolio" />
     <router-view name="contact" />
+    <router-view name="chat" />
   </transition-group>
   <router-view name="footer" />
 </template>
