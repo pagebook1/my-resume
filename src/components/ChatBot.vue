@@ -22,8 +22,11 @@
 
 <script lang="ts">
 import { GeminiAI } from '../gemini-ai/gemini-prompt'
+import {TTS} from  '../gemini-ai/TexttoSpeech'
+//add 1 message to the messages array
 export default {
     data() {
+        
         return {
             messages: [] as { id: number, text: string, isBot: boolean }[],
             userInput: ''
@@ -36,23 +39,42 @@ export default {
                 this.userInput = ''
                 this.messages.push({ id: Date.now(), text: user_input, isBot: false });
                 const bot_response = await new GeminiAI({ prompt: user_input }).run();
+                await new TTS({message:bot_response}).speak();
                 this.messages.push({ id: Date.now(), text: bot_response, isBot: true });
                 // Call your chatbot API or add your bot logic here to get the bot's response
                 // and push it to the messages array with isBot set to true
             }
         }
     },
+    async mounted() {
+        const bot_response = await new GeminiAI({ prompt: 'Give a welcoming message about you. Make it cheerful and Sarcastic such as Hello, I am kevin. Not physically but still I am kevin created using Gemini. I have all knowledge about him (like that make it short and cheerful)' }).run();
+        await new TTS({message:bot_response}).speak();
+        this.messages.push({ id: Date.now(), text: bot_response, isBot: true });
+    }
 };
 </script>
 
 <style scoped>
+@media (min-width: 768px) {
+    .chatbot-modal {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .chatbot-modal {
+        width: 50%;
+    }
+}
 .chatbot-modal {
     position: fixed;
     bottom: 0;
     right: 0;
     z-index: 1000;
-    width: 500px;
-    height: 700px;
+    width: 90%;
+    max-width: 600px;
+    height: 600px;
+    max-height: 600px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
