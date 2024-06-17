@@ -1,5 +1,13 @@
 <template>
-    <div class="chatbot-modal">
+    <!-- create a div for floating button -->
+     <div class="floating-modal" v-show = "!isModalVisible">
+        <button @click="isModalVisible = true">Chat With Me</button>
+     </div>
+    <div class="chatbot-modal" v-show="isModalVisible">
+        <div class="chatbot-modal-header">
+            <h3>Chat with me </h3>
+            <button @click="isModalVisible = false">Close</button>
+        </div>
         <div class="chatbot-modal-content">
             <div class="chatbot-messages">
                 <div v-for="message in messages" :key="message.id" class="chatbot-message"
@@ -26,10 +34,10 @@ import {TTS} from  '../gemini-ai/TexttoSpeech'
 //add 1 message to the messages array
 export default {
     data() {
-        
         return {
             messages: [] as { id: number, text: string, isBot: boolean }[],
-            userInput: ''
+            userInput: '',
+            isModalVisible : true
         };
     },
     methods: {
@@ -55,6 +63,19 @@ export default {
 </script>
 
 <style scoped>
+.floating-modal {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px;
+}
+.chatbot-modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
 @media (min-width: 768px) {
     .chatbot-modal {
         width: 70%;
@@ -82,7 +103,7 @@ export default {
 }
 
 .chatbot-modal-content {
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
 }
