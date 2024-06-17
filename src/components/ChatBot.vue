@@ -1,6 +1,6 @@
 <template>
     <!-- create a div for floating button -->
-    <div class="floating-modal" v-show="!isModalVisible">
+    <div class="floating-modal" v-show="!isModalVisible" >
         <button @click="isModalVisible = true">Chat With Me</button>
     </div>
     <div class="chatbot-modal" v-show="isModalVisible">
@@ -31,9 +31,11 @@
 <script lang="ts">
 import { GeminiAI } from '../gemini-ai/gemini-prompt'
 import { TTS } from '../gemini-ai/TexttoSpeech'
+const tts = new TTS({ message: 'Give a welcoming message about you. Make it cheerful and Sarcastic such as Hello, I am kevin. Not physically but still I am kevin created using Gemini. I have all knowledge about him (like that make it short and cheerful)' })
 //add 1 message to the messages array
 export default {
     data() {
+        // this.initializeChat().then(() => {});
         return {
             messages: [] as { id: number, text: string, isBot: boolean }[],
             userInput: '',
@@ -47,22 +49,25 @@ export default {
                 this.userInput = ''
                 this.messages.push({ id: Date.now(), text: user_input, isBot: false });
                 const bot_response = await new GeminiAI({ prompt: user_input }).run();
-                await new TTS({ message: bot_response }).speak();
+                tts.message = bot_response
+                tts.speak()
                 this.messages.push({ id: Date.now(), text: bot_response, isBot: true });
                 // Call your chatbot API or add your bot logic here to get the bot's response
                 // and push it to the messages array with isBot set to true
             }
+        },
+        async initializeChat() {
+            const prompt = await new GeminiAI({ prompt: 'Give a welcoming message about you. Make it cheerful and Sarcastic such as Hello, I am kevin. Not physically but still I am kevin created using Gemini. I have all knowledge about him (like that make it short and cheerful)' }).run()
+            tts.message = prompt
+            tts.speak()
+            this.messages.push({ id: Date.now(), text: prompt, isBot: true });
+
         }
     },
+    async created() {
+    },
     async mounted() {
-        await new GeminiAI({ prompt: 'Give a welcoming message about you. Make it cheerful and Sarcastic such as Hello, I am kevin. Not physically but still I am kevin created using Gemini. I have all knowledge about him (like that make it short and cheerful)' }).run().then((response) => {
-            this.messages.push({ id: Date.now(), text: response, isBot: true });
-            setTimeout(() => {
-                new TTS({ message: response }).speak();
-            }, 1000); // Delay of 1 second
-        });
-
-
+        await this.initializeChat()
     }
 };
 </script>

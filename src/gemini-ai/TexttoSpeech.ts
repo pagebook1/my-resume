@@ -5,12 +5,19 @@ export class TTS {
         this.message = message;
     }
     private tts: ReturnType<typeof useSpeechSynthesis> | null = null;
+    run() {
+        return useSpeechSynthesis(this.message, { volume: 1, rate: 1.3, pitch: 1, lang: 'en-US', })
+    }
     async speak() {
         try {
+            const tts = this.run()
             //check if the speak is active
-             this.tts = useSpeechSynthesis(this.message, { volume: 1, rate: 1.3, pitch: 1, lang: 'en-US', })
-            if (this.tts.isPlaying) this.tts.stop()
-                this.tts.speak()
+            if (tts.isPlaying.value) {
+                tts.stop()
+            } else {
+                tts.speak()
+            }
+
             // Delay of 1 
 
         } catch (e) {
@@ -18,7 +25,7 @@ export class TTS {
         }
     }
     async stop() {
-       this.tts?.stop()
+        this.tts?.stop()
     }
 
 }
