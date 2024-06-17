@@ -19,8 +19,6 @@
     "isotope-layout": "^3.0.6",
     "jquery": "^3.7.1",
     "swiper": "^11.0.5",
-    "typed": "^10.0.0-beta.2",
-    "typed.js": "^2.1.0",
     "vue": "^3.3.11",
     "vue-router": "^4.0.13"
   },
